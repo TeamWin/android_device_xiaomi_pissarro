@@ -25,4 +25,3 @@ odm                                                     /odm                   e
 /dev/block/by-name/vbmeta_system                        /vbmeta_system         emmc          defaults                                                                   first_stage_mount,slotselect,avb=vbmeta
 /dev/block/by-name/vbmeta                               /vbmeta                emmc          defaults                                                                   defaults
 /dev/block/by-name/boot                                 /boot                  emmc          defaults                                                                   slotselect
-/dev/block/by-name/boot /dev/block/bootdevice/by-name/boot symlink 0 0
