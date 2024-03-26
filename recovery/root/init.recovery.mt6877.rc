@@ -28,13 +28,12 @@ on post-fs
 
 on init
     export PATH /sbin:/system/bin:/vendor/bin:/vendor/bin/hw
-    export LD_LIBRARY_PATH /system/lib64:/vendor/lib64:/vendor/lib64/hw
-    symlink /dev/block/by-name/boot /dev/block/bootdevice/by-name/boot
-    symlink /dev/block/by-name/boot_a /dev/block/bootdevice/by-name/boot_a
-    symlink /dev/block/by-name/boot_b /dev/block/bootdevice/by-name/boot_b
+    export LD_LIBRARY_PATH /system/lib64:/vendor/lib64:/vendor/lib64/hw\
 
 on fs
     install_keyring
+    wait /dev/block/platform/soc/${ro.boot.bootdevice}
+    symlink /dev/block/platform/soc/${ro.boot.bootdevice} /dev/block/bootdevice
 
 service mtk.plpath.utils.link /system/bin/mtk_plpath_utils
     class main
