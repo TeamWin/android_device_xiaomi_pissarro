@@ -28,12 +28,13 @@ on post-fs
 
 on init
     export PATH /sbin:/system/bin:/vendor/bin:/vendor/bin/hw
-    export LD_LIBRARY_PATH /system/lib64:/vendor/lib64:/vendor/lib64/hw\
+    export LD_LIBRARY_PATH /system/lib64:/vendor/lib64:/vendor/lib64/hw
+    # Create a more standard /dev/block layout for our scripts
+    symlink /dev/block/platform/bootdevice /dev/block/bootdevice
+
 
 on fs
     install_keyring
-    wait /dev/block/platform/soc/${ro.boot.bootdevice}
-    symlink /dev/block/platform/soc/${ro.boot.bootdevice} /dev/block/bootdevice
 
 service mtk.plpath.utils.link /system/bin/mtk_plpath_utils
     class main
