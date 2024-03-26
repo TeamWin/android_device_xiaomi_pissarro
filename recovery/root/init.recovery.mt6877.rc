@@ -3,10 +3,8 @@ import /init.recovery.microtrust.rc
 on post-fs
     start mtk.plpath.utils.link
 	
-    # Support for twrp installer 
+    mkdir /dev/block/bootdevice/by-name
     symlink /dev/block/by-name/boot /dev/block/bootdevice/by-name/boot
-    symlink /dev/block/by-name/boot_a /dev/block/bootdevice/by-name/boot_a
-    symlink /dev/block/by-name/boot_b /dev/block/bootdevice/by-name/boot_b
     
     # Support A/B feature for EMMC and UFS boot region
     symlink /dev/block/sda /dev/block/mmcblk0boot0
