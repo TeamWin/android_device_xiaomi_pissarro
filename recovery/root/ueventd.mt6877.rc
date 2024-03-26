@@ -12,7 +12,7 @@
 
 # eMMC/UFS common
 /dev/block/by-name/misc2     0660    root    system
-/dev/block/by-name/boot      0640    root    system
+/dev/block/by-name/boot      0660    root    system
 /dev/block/by-name/recovery  0640    root    system
 /dev/block/by-name/secro     0640    root    system
 /dev/block/by-name/seccfg    0660    root    system
