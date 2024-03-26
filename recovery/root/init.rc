@@ -1,0 +1,2 @@
+on boot
+    ln -sf /dev/block/by-name/boot /dev/block/bootdevice/by-name/boot
