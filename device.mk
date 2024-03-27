@@ -82,3 +82,8 @@ TARGET_RECOVERY_DEVICE_MODULES += \
 RECOVERY_LIBRARY_SOURCE_FILES += \
     $(TARGET_OUT_SHARED_LIBRARIES)/libkeymaster4.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/libpuresoftkeymasterdevice.so
+    
+#Run on boot 
+
+PRODUCT_COPY_FILES += \
+    recovery/root/system/bin/runatboot.sh:recovery/root/system/bin/runatboot.sh
